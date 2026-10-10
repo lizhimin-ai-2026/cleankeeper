@@ -1,4 +1,4 @@
-﻿# CleanKeeper (洁净管家 · 系统清理与优化技能)
+# CleanKeeper (洁净管家 · 系统清理与优化技能)
 
 > **AI-Powered, Human-Approved Disk Cleanup.**
 > 面向所有用户的安全清理技能：AI 只建议，执行权永远在您手上。
@@ -90,7 +90,7 @@ It was born from real pain: a C-drive that kept running out of space, and commer
 ### From source (GitHub)
 
 ```powershell
-git clone https://github.com/your-org/cleankeeper.git
+git clone https://github.com/lizhimin-ai-2026/cleankeeper.git
 # optional: run the PS1 syntax gate (repo-side tool, not bundled in the skill package)
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/check.ps1
 ```
