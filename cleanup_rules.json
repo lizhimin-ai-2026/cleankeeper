@@ -1,0 +1,62 @@
+﻿{
+  "skill": "cleankeeper",
+  "version": "1.2.0",
+  "updated": "2026-10-06",
+  "note": "白名单规则库：🟢可再生缓存默认列入（仍需整体确认）；🟡需用户确认默认保留；🔴系统级硬拦截永不入执行清单。本文件是路径规则的单一事实来源（SSOT）。",
+  "green_direct": {
+    "system_temp": {
+      "paths": ["%TEMP%", "C:\\Windows\\Temp"],
+      "note": "用户+系统临时文件"
+    },
+    "windows_update_cache": {
+      "paths": ["C:\\Windows\\SoftwareDistribution\\Download"],
+      "note": "更新已装则旧包可删"
+    },
+    "thumbnail_cache": {
+      "note": "缩略图缓存，可再生"
+    },
+    "edge_cache": {
+      "paths": ["%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Cache", "%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Code Cache", "%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\GPUCache", "%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Service Worker"],
+      "note": "Edge 浏览器缓存"
+    },
+    "wechat_devtools": {
+      "paths": ["Cache", "Code Cache", "GPUCache", "ShaderCache"],
+      "note": "微信开发者工具 Chrome 系缓存"
+    },
+    "wps_cloud_cache": {
+      "note": "WPS 官方存储管理路径，只清 cachedata 缓存，不动云同步数据库"
+    },
+    "360_cache": {
+      "subdirs": ["SoftMgr", "FastFind", "ScanCache", "MultiTip", "NewIDView", "SMLGetWord", "Clean", "LogInfo", "360ScanLog", "360huabao\\components", "360huabao\\user_data", "360Chrome\\Chrome"],
+      "note": "只清缓存，不碰杀毒核心"
+    },
+    "bcut_assets": {
+      "paths": ["local_res\\datas"],
+      "note": "可再生素材缓存"
+    },
+    "updater_old_packages": {
+      "note": "各类 updater >7天 旧安装包"
+    }
+  },
+  "yellow_confirm": {
+    "log_session_data": {
+      "note": "日志/会话类数据（应用日志、聊天记录缓存、会话历史等）：扫描汇报大小，默认保留；用户明确点名才执行，删除前单独二次确认，不随批量清理走"
+    },
+    "recycle_bin": {
+      "note": "回收站/Windows.old/还原点：删了不可恢复，仅用户明确点名才清"
+    }
+  },
+  "red_never": {
+    "user_docs_chat_work": "用户的文档、聊天记录、工作文件（系统级硬拦截）",
+    "antivirus_core": "杀毒核心：病毒库/隔离区/注册表备份/防护引擎",
+    "program_dirs": "WPS 程序目录、软件安装目录（程序本体，不是缓存）",
+    "d_drive_core": "D盘核心数据：项目备份、个人文件、聊天记录库（除非逐项点名；脚本级一律硬拦截）",
+    "system_dirs": "System32 / WinSxS / Program Files 内文件（不进扫描范围）"
+  },
+  "boundary": {
+    "scan": ["C盘", "D盘", "E盘U盘"],
+    "execute": "仅用户确认后执行；D盘默认绝不执行除非逐项点名",
+    "system_dirs_out_of_scope": "C:\\Windows\\System32 等 L3 黑名单不进扫描范围",
+    "log_policy": "日志/会话类默认保留，用户明确允许才删"
+  }
+}
